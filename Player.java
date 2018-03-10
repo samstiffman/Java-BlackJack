@@ -9,8 +9,6 @@ import application.Card.Rank;
 public class Player {
 	
 	ArrayList<Card> hand = new ArrayList<Card>();
-	
-	boolean finished;
 	int soft;
 	
 	int total = 0;
