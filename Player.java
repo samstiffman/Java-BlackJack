@@ -21,20 +21,20 @@ public class Player {
 		this.hand.add(second);
 		System.err.println();
 		if((first.rank == Rank.ACE && first.rank.getRank()<10) || (second.rank == Rank.ACE && first.rank.getRank()<10)) {
-			this.soft++;
+			soft++;
 		}
-		this.setTotal();
+		setTotal();
 	}
 	public void AITurn() {
-		this.setTotal();
+		setTotal();
 		
 		while(this.total<17) {
 			 Card newCard = Deck.draw();
              if(newCard.rank.getRank()== 1) {
-             	this.soft++;
+             	soft++;
              }
-             this.hand.add(newCard);
-             this.setTotal();
+             hand.add(newCard);
+             setTotal();
              System.err.println("AI hit, new Total: " + this.total);
 		}
 		if(this.total>21) {
@@ -95,7 +95,7 @@ public class Player {
 			aces--;
 			sum-=10;
 		}
-		this.total = sum;
+		total = sum;
 	}
 
 }
