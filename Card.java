@@ -13,11 +13,11 @@ public class Card{
        this.address = address;
    }
 	public Card() {
-		this.rank = Rank.values()[0];
-		this.suit = Suit.values()[0];
+		rank = Rank.values()[0];
+		suit = Suit.values()[0];
 	}
 	public String toString() {
-		return this.rank + " of " + this.suit;
+		return rank + " of " + suit;
 	}
 	enum Suit {
 		EXTRA(0),
@@ -29,7 +29,7 @@ public class Card{
 		private int cardSuit;
 		
 		private Suit(int value) {
-			this.cardSuit = value;
+			cardSuit = value;
 		}
 		
 		public int getSuit() {
@@ -56,7 +56,7 @@ public class Card{
 		private int rank;
 		
 		private Rank(int value) {
-			this.rank = value;
+			rank = value;
 		}
 		
 		public int getRank() {
