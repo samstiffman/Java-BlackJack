@@ -17,8 +17,8 @@ public class Player {
 		Card first = Deck.draw();
 		Card second = Deck.draw();
 		System.err.println(first + ", " + second);
-		this.hand.add(first);
-		this.hand.add(second);
+		hand.add(first);
+		hand.add(second);
 		System.err.println();
 		if((first.rank == Rank.ACE && first.rank.getRank()<10) || (second.rank == Rank.ACE && first.rank.getRank()<10)) {
 			soft++;
@@ -28,20 +28,20 @@ public class Player {
 	public void AITurn() {
 		setTotal();
 		
-		while(this.total<17) {
+		while(total<17) {
 			 Card newCard = Deck.draw();
              if(newCard.rank.getRank()== 1) {
              	soft++;
              }
              hand.add(newCard);
              setTotal();
-             System.err.println("AI hit, new Total: " + this.total);
+             System.err.println("AI hit, new Total: " + total);
 		}
-		if(this.total>21) {
+		if(total>21) {
 			System.err.println("AI busts");
 			Main.AIBust();
 		}	
-		else if(this.total==21) {
+		else if(total==21) {
 			if(Main.player.total==21) {
 				System.err.println("Tie");
 				Main.tie();
@@ -55,11 +55,11 @@ public class Player {
 			System.err.println("Blackjack");
 			Main.blackJack();
 		}
-		else if(this.total == Main.player.total) {
+		else if(total == Main.player.total) {
 			//if equal push
 			Main.tie();
 		}
-		else if(this.total > Main.player.total && this.total<21) {
+		else if(total > Main.player.total && total<21) {
 			//computer wins
 			Main.playerBust();
 		}
@@ -70,13 +70,13 @@ public class Player {
 	}
 	public void setTotal() {
 		int aces =0;
-		for(Card i: this.hand) {
+		for(Card i: hand) {
 			if(i.rank == Rank.ACE) {
 				aces++;
 			}
 		}
 		int sum = 0;
-		for(Card value: this.hand) {
+		for(Card value: hand) {
 			switch(value.rank) {
 			case ACE: sum += 11;
 				soft++;
