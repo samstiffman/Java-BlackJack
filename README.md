@@ -10,3 +10,5 @@ The card backs are from WikiMedia commons: https://commons.wikimedia.org/wiki/Ca
 The card fronts are from Open Game Art: https://opengameart.org/content/playing-cards-vector-png
 
 NOTE: I am NOT a UI designer nor am I good at it this is simply meant to illustrate my knowledge of Java FX
+
+Last Edit: May 11, 2018
