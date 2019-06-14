@@ -19,7 +19,7 @@ public static ArrayList<Card> cards = new ArrayList<Card>(52);
 		for (int suit = 1; suit <= 4; suit++) {
 		    for (int rank = 1; rank <= 13; rank++) {
 		        cards.add(new Card(Rank.values()[rank], Suit.values()[suit], (rank + "_of_"+ Suit.values()[suit])));
-		        // ^^ The 3rd parameter is my smart way of making the address string match that of the enums 
+		        // ^^ The 3rd parameter is my way of making the address string match that of the enums 
 		    }
 		}
     }
